@@ -62,6 +62,7 @@ yarn public
 
 - MySQL 5.7
 - JDK 1.8
+- Kotlin 版本需要和build.gradle里面一致
 - Gradle 4.8 - 4.10 
 
 #### 数据库初始化
