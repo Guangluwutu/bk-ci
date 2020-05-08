@@ -22,9 +22,9 @@ cp ./consul /usr/local/sbin/
 - consul 服务端启动
   
 ```shell
-consul agent -server -data-dir={consul_directory} -ui -http-port={consul_http_port} -datacenter=bkdevops -domain=bkdevops -bootstrap -client=0.0.0.0
+consul agent -server -bind=10.10.10.1 -data-dir={consul_directory} -ui -http-port={consul_http_port} -datacenter=bkdevops -domain=bkdevops -bootstrap -client=0.0.0.0
 # 例子：consul server服务器IP=10.10.10.1
-consul agent -server -data-dir=/data/consul -ui -http-port=8080 -datacenter=dc -domain=ci -bootstrap -client=0.0.0.0
+consul agent -server -bind=10.10.10.1 -data-dir=/data/consul -ui -http-port=8080 -datacenter=dc -domain=ci -bootstrap -client=0.0.0.0
 ```
 
 - consul 客户端启动
