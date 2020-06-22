@@ -55,18 +55,25 @@ cd /usr/local/openresty/nginx && ./sbin/nginx -v
 ```shell
     cd {{code}}/scripts
     sh ./render_tpl -m ci ../support-files/templates/gateway*
+    #如以下命令，该命令会在bkenv.properties中的build_path路径下生成/ci/gateway/core目录，该目录下有生成的模板文件
+    #sh /data/bk-ci/scripts/render_tpl -m ci ../support-files/templates/gateway*
 ```
 
 - 拷贝渲染后的模板文件到nginx代码目录
 
 ```shell
 cp -rf {{code}}/ci/gateway/core/* {{code}}/src/gateway/core/
+#例，前者为生成的目录的相关目录，后者为编译部署工程中的相关路径：
+#cp -rf /data/bkee/ci/gateway/core/* /data/bk-ci/src/gateway/core/
 ```
 
 - 将nginx配置文件复制到项目目录下
   
 ```shell
 cp -rf {{code}}/src/gateway/core/* __INSTALL_PATH__/gateway
+#例,如果之前是把生成的模板文件放在了bkee项目中，需要把多余的core删掉
+#cp -rf /data/bk-ci/src/gateway/core/* /data/bkee/src/gateway/
+#rm -rf /data/bkee/ci/gateway/core/
 ```
 
 - 将`__INSTALL_PATH__/gateway`的nginx配置目录软连到nginx的conf目录下
@@ -74,6 +81,8 @@ cp -rf {{code}}/src/gateway/core/* __INSTALL_PATH__/gateway
 ```shell
 rm -rf /usr/local/openresty/nginx/conf
 ln -s  __INSTALL_PATH__/gateway /usr/local/openresty/nginx/conf
+例子：
+ln -s /data/bkee/ci/gateway /usr/local/openresty/nginx/conf
 ```
 
 
