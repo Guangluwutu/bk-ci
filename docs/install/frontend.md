@@ -50,3 +50,5 @@ __INSTALL_PATH__/__MODULE__/frontend/store
 __INSTALL_PATH__/__MODULE__/frontend/svg-sprites
 __INSTALL_PATH__/__MODULE__/frontend/ticket
 ```
+
+如果在商店中没有图标显示，请参考（docs/install/backend.md）中的 构件服务Artifactory特殊部署操作 的第二条，将{core_path}/support-file/file/png中的图标文件放到对应的目录中去。
