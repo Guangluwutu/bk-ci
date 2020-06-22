@@ -99,3 +99,9 @@ cd /usr/local/openresty/nginx # 进入nginx安装目录
 ./sbin/nginx     # 启动nginx
 ./sbin/nginx -s reload # 重启nginx
 ```
+如果启动过程中出现提示没有log目录，在相关位置中创建log目录
+如果启动过程中log目录下没有accesslog文件，请在log目录下的nginx文件夹执行
+```shell
+chomd -777 ./nginx
+```
+
