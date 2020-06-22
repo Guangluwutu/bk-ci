@@ -66,6 +66,7 @@
 
 前端构建之后生成的模板配置文件变量替换
 ```bash
+  #fornted#xx#index.html位于/data/bkee/ci/fronted/xx/中，生成的文件位于 __install_path__/ci/fronted/xx/下
   ./render_tpl -m ci /data/bkee/ci/frontend/pipeline/frontend#pipeline#index.html
   ./render_tpl -m ci /data/bkee/ci/frontend/console/frontend#console#index.html
 ```
