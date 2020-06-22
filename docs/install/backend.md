@@ -56,6 +56,9 @@ rabbitmq: 3.7.15 [rabbitmq部署](rabbitmq.md)
 
 在部署服务器上的示例/data/bkee/的主目录下，创建一个ci目录。
 
+- 如果仅部署构建出来的微服务，执行`/bk-ci/scripts/generate_boot.sh`，将在`/bk-ci/support-files/templates`中生成相关的sh文件，
+-在最后一步 #support-files/template配置文件初始化 中将把sh文件和相关微服务目录一并生成，此时将以上微服务依次填入即可
+
 - 根据微服务名称，在ci创建对应微服务的目录, 将上述编译后的boot-xxx.jar放入，
 - 将 /bk-ci/support-files/templates/目录下的各个服务名脚本，比如#project#project.sh 项目管理微服务改名为project.sh放到对应目录，
 - 配置文件中双_下划线定义的变量需要替换，见[support-files占位符声明](../../support-files/README.MD)来替换相应的占位符号
